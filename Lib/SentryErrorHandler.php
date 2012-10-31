@@ -13,9 +13,8 @@ class SentryErrorHandler extends ErrorHandler {
         if (Configure::read('debug')==0) {
             $options = Configure::read('Sentry');
             $defaults = array(
-                'server' => null,
                 'app_name' => 'Application name',
-                'logger' => 'PHP'
+                'php_server' => null
             );
             if ($options == null) throw new Exception('Configuration Sentry non présente');
             
@@ -23,8 +22,8 @@ class SentryErrorHandler extends ErrorHandler {
 
             Raven_Autoloader::register();
 
-            $client = new Raven_Client($options['server']);
-            $client->captureException($exception, $options['app_name'], $options['logger']);
+            $client = new Raven_Client($options['php_server']);
+            $client->captureException($exception, $options['app_name'], 'PHP');
         }
     }
 

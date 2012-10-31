@@ -6,27 +6,30 @@ Cake-Sentry
 Installation
 ------------
 
-1. Install Sentry Plugin :
-```
-git submodule add http://github.com/Sandreu/cake-sentry app/Plugin/Sentry
-```
+1. Install Sentry Plugin into your CakePHP project :
 
-2. Configure the error handler in *core.php*
+	git submodule add http://github.com/Sandreu/cake-sentry app/Plugin/Sentry
+	cd app/Plugin/Sentry
+	git submodule init
+	git submodule update
+
+2. Configure the error handler in your *core.php* :
+
 ```php
 	App::uses('SentryErrorHandler', 'Sentry.Lib');
-	
+
 	Configure::write('Sentry', array(
-		'server' => 'http://your-sentry-dns',
 		'app_name' => 'Application Name',
-		'logger' => 'PHP'
+		'php_server' => 'http://your-php-sentry-dns',
+		'js_server' => 'http://your-javascript-sentry-dns'
 	));
-	
+
 	Configure::write('Error', array(
 		'handler' => 'SentryErrorHandler::handleError',
 		'level' => E_ALL & ~E_DEPRECATED,
 		'trace' => true
 	));
-	
+
 	Configure::write('Exception', array(
 		'handler' => 'SentryErrorHandler::handleException',
 		'renderer'=>'ExceptionRenderer'
