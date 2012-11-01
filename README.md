@@ -13,15 +13,24 @@ Installation
 	git submodule init
 	git submodule update
 
+
 2. Configure the error handler in your *core.php* :
 
 ```php
 	App::uses('SentryErrorHandler', 'Sentry.Lib');
-
+	
 	Configure::write('Sentry', array(
-		'app_name' => 'Application Name',
-		'php_server' => 'http://your-php-sentry-dns',
-		'js_server' => 'http://your-javascript-sentry-dns'
+		'production_only' => false, // true is default value -> no error in sentry when debug
+		'User' => array(
+			'model' => 'SpecialUser', // 'User' is default value
+			'email_field' => 'special_email' // default checks 'email' and 'mail' fields
+		),
+		'PHP' => array(
+			'server'=>'http://your-sentry-dns-for-PHP'
+		),
+		'javascript' => array(
+			'server'=>'http://your-sentry-dns-for-javascript'
+		)
 	));
 
 	Configure::write('Error', array(
@@ -34,4 +43,14 @@ Installation
 		'handler' => 'SentryErrorHandler::handleException',
 		'renderer'=>'ExceptionRenderer'
 	));
+```
+
+3. include ravenjs and in the default layout :
+
+```html
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/raven-0.5.3.min.js"></script>
+	<script type="text/javascript">
+		<?php echo $this->element('Sentry.raven-js'); ?>
+	</script>
 ```

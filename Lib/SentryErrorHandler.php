@@ -10,20 +10,12 @@ App::import('Vendor', 'Sentry.Raven/lib/Raven/Autoloader');
 class SentryErrorHandler extends ErrorHandler {
 
     protected static function sentryLog(Exception $exception) {
-        if (Configure::read('debug')==0) {
-            $options = Configure::read('Sentry');
-            $defaults = array(
-                'app_name' => 'Application name',
-                'php_server' => null
-            );
-            if ($options == null) throw new Exception('Configuration Sentry non présente');
-            
-            $options = array_merge($defaults, $options);
-
+        if (Configure::read('debug')==0 || !Configure::read('Sentry.production_only')) {
             Raven_Autoloader::register();
+            App::uses('CakeRavenClient', 'Sentry.Lib');
 
-            $client = new Raven_Client($options['php_server']);
-            $client->captureException($exception, $options['app_name'], 'PHP');
+            $client = new CakeRavenClient(Configure::read('Sentry.PHP.server'));
+            $client->captureException($exception, get_class($exception), 'PHP');
         }
     }
 
