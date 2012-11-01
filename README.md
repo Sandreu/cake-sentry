@@ -7,12 +7,12 @@ Installation
 ------------
 
 1. Install Sentry Plugin into your CakePHP project :
-
+<pre>
 	git submodule add http://github.com/Sandreu/cake-sentry app/Plugin/Sentry
 	cd app/Plugin/Sentry
 	git submodule init
 	git submodule update
-
+</pre>
 
 2. Configure the error handler in your *core.php* :
 
