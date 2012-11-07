@@ -1,7 +1,7 @@
 Cake-Sentry
 ===========
 
-**Cake-Sentry** is an error handler plugged on [Sentry](http://www.getsentry.com)
+**Cake-Sentry** is an error handler plugged on [Sentry](http://www.getsentry.com) - [docs](http://sentry.readthedocs.org/en/latest/quickstart/index.html#setting-up-an-environment)
 
 Installation
 ------------
@@ -45,7 +45,7 @@ Installation
 	));
 ```
 
-3. include ravenjs and in the default layout :
+3. include ravenjs and init script in the default layout :
 
 ```html
 	<script type="text/javascript" src="js/jquery.js"></script>
