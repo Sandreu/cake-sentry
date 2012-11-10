@@ -21,6 +21,12 @@ class SentryErrorHandler extends ErrorHandler {
 
     public static function handleException(Exception $exception) {
         try {
+            // Avoid bot scan errors
+            if (($exception instanceof MissingControllerException || $exception instanceof MissingPluginException) && Configure::read('debug')==0) {
+                echo 'Cette url n\'est pas valide.';
+                exit(0);
+            }
+
             self::sentryLog($exception);
 
             return parent::handleException($exception);
