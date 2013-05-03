@@ -45,7 +45,14 @@ Installation
 	));
 ```
 
-3. include ravenjs and init script in the default layout :
+3. Use Sentry as logger:
+
+```php
+	CakePlugin::load(array('Sentry'));
+	CakeLog::config('default', array('engine' => 'Sentry.SentryLog'));
+```
+
+4. include ravenjs and init script in the default layout :
 
 ```php
 	<?php
