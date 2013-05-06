@@ -14,14 +14,13 @@ Installation
 	git submodule update
 </pre>
 
-2. Load the cake-sentry Plugin in your bootstrap.php :
-
+2. Load the cake-sentry Plugin in your *bootstrap.php* :
 ```php
 	CakePlugin::load('Sentry');
 ```
 
-3. Configure the error handler in your *core.php* :
 
+3. Configure the error handler in your *core.php* :
 ```php
 	App::uses('SentryErrorHandler', 'Sentry.Lib');
 	
@@ -51,15 +50,12 @@ Installation
 	));
 ```
 
-4. Use Sentry as logger:
-
+4. Use Sentry as logger :
 ```php
-	CakePlugin::load(array('Sentry'));
 	CakeLog::config('default', array('engine' => 'Sentry.SentryLog'));
 ```
 
 5. include ravenjs and init script in the default layout :
-
 ```php
 	<?php
 	echo $this->Html->script('jquery');
