@@ -46,5 +46,3 @@ class SentryErrorHandler extends ErrorHandler {
         }
     }
 }
-
-?>
