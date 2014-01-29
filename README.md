@@ -62,7 +62,7 @@ Installation
 	echo $this->Html->script('ravenjs-min');
 	?>
 	<script type="text/javascript">
-		$.(function () {
+		$(function () {
 			<?php echo $this->element('Sentry.raven-js'); ?>
 		});
 	</script>
