@@ -1,6 +1,6 @@
 <?php if (Configure::read('debug')==0 || !Configure::read('Sentry.production_only')) { ?>
-	Raven.config('<?php echo Configure::read('Sentry.javascript.server'); ?>');
-	window.onerror = Raven.process;
+	Raven.config('<?php echo Configure::read('Sentry.javascript.server'); ?>').install();
+	
 	if (typeof(_) != 'undefined') {
 		var oldBind = _.bind;
 
