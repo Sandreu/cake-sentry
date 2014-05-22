@@ -3,7 +3,7 @@
 App::uses('ClassRegistry', 'Utility');
 
 class CakeRavenClient extends Raven_Client {
-    public function capture($data, $stack) {
+    public function capture($data, $stack, $vars = NULL) {
     	if (class_exists('AuthComponent')) {
     		$model= Configure::read('Sentry.User.model');
     		if (empty($model)) $model = 'User';
