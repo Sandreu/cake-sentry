@@ -22,8 +22,8 @@ class SentryErrorHandler extends ErrorHandler {
     public static function handleException(Exception $exception) {
         try {
             // Avoid bot scan errors
-            if (Configure::read('Sentry.missing_skip') && ($exception instanceof MissingControllerException || $exception instanceof MissingPluginException) && Configure::read('debug')==0) {
-                echo Configure::read('Sentry.missing_skip');
+            if (Configure::read('Sentry.avoid_bot_scan_errors') && ($exception instanceof MissingControllerException || $exception instanceof MissingPluginException) && Configure::read('debug')==0) {
+                echo Configure::read('Sentry.avoid_bot_scan_errors');
                 exit(0);
             }
 
