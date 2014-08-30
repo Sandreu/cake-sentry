@@ -26,6 +26,7 @@ Installation
 	
 	Configure::write('Sentry', array(
 		'production_only' => false, // true is default value -> no error in sentry when debug
+		'missing_skip' => 'MissingController or MissingPlugin error message', // or false if you want Sentry to log MissingController and MissingPlugin Exceptions
 		'User' => array(
 			'model' => 'SpecialUser', // 'User' is default value
 			'email_field' => 'special_email' // default checks 'email' and 'mail' fields
