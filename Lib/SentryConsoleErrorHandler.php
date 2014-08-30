@@ -23,10 +23,10 @@ class SentryConsoleErrorHandler extends ConsoleErrorHandler {
 	public function handleException(Exception $exception) {
 		try {
 			// Avoid bot scan errors
-			if (($exception instanceof MissingControllerException || $exception instanceof MissingPluginException) && Configure::read('debug')==0) {
-				echo 'Cette url n\'est pas valide.';
-				exit(0);
-			}
+			if (Configure::read('Sentry.avoid_bot_scan_errors') && ($exception instanceof MissingControllerException || $exception instanceof MissingPluginException) && Configure::read('debug')==0) {
+                		echo Configure::read('Sentry.avoid_bot_scan_errors');
+                		exit(0);
+            		}
 
 			self::sentryLog($exception);
 
