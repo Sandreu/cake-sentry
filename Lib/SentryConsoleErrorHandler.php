@@ -1,7 +1,6 @@
 <?php
 
 
-App::import('Vendor', 'Sentry.Raven/lib/Raven/Autoloader');
 App::uses('ConsoleErrorHandler', 'Console');
 /**
  * Description of SentryConsoleErrorHandler

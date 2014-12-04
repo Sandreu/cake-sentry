@@ -2,7 +2,6 @@
 /**
  * Sentry Storage stream for Logging
  */
-App::import('Vendor', 'Sentry.Raven/lib/Raven/Autoloader');
 App::uses('BaseLog', 'Log/Engine');
 App::uses('CakeRavenClient', 'Sentry.Lib');
 
