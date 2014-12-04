@@ -1,0 +1,24 @@
+{
+    "name": "sandreu/sentry",
+    "type": "cakephp-plugin",
+    "description": "Sentry error handler plugin for CakePHP2",
+    "keywords": ["Sentry", "CakePHP", "Log", "Error", "Exception"],
+    "require": {
+        "php": ">=5.2.8",
+        "raven/raven": "~0.10",
+        "composer/installers": "*"
+    },
+    "license": "BSD 3-Clause",
+    "authors": [
+        {
+            "name": "Sandreu",
+            "email": "email@example.com",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://github.com/Sandreu/cake-sentry",
+    "support": {
+        "issues": "https://github.com/Sandreu/cake-sentry/issues"
+    },
+    "minimum-stability": "stable"
+}
