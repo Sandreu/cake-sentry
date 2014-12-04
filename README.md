@@ -6,13 +6,20 @@ Cake-Sentry
 Installation
 ------------
 
-1. Install Sentry Plugin into your CakePHP project :
+1. Install Sentry Plugin into your CakePHP project with composer :
 <pre>
-	git submodule add http://github.com/Sandreu/cake-sentry app/Plugin/Sentry
-	cd app/Plugin/Sentry
-	git submodule init
-	git submodule update
+    // composer.json
+    
+    // …
+
+    "require": {
+      // …
+      "sandreu/sentry": "*"
+    },
+
+    // …
 </pre>
+
 
 2. Load the cake-sentry Plugin in your *bootstrap.php* :
 ```php
