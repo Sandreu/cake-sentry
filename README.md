@@ -14,7 +14,7 @@ Installation
 
     "require": {
       // …
-      "sandreu/sentry": "*"
+      "sandreu/cake-sentry": "*"
     },
 
     // …
