@@ -1,5 +1,5 @@
 {
-    "name": "sandreu/sentry",
+    "name": "sandreu/cake-sentry",
     "type": "cakephp-plugin",
     "description": "Sentry error handler plugin for CakePHP2",
     "keywords": ["Sentry", "CakePHP", "Log", "Error", "Exception"],
