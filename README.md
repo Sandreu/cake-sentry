@@ -5,6 +5,7 @@ Cake-Sentry
 
 Installation
 ------------
+**Note if you don't install from composer you will have to manually download the raven component and install it before proceeding to step 2.**
 
 1. Install Sentry Plugin into your CakePHP project with composer :
 <pre>
@@ -39,10 +40,10 @@ Installation
 			'email_field' => 'special_email' // default checks 'email' and 'mail' fields
 		),
 		'PHP' => array(
-			'server'=>'http://your-sentry-dns-for-PHP'
+			'server'=>'http://your-sentry-DSN-for-PHP'
 		),
 		'javascript' => array(
-			'server'=>'http://your-sentry-dns-for-javascript'
+			'server'=>'http://your-sentry-DSN-for-javascript'
 		)
 	));
 
