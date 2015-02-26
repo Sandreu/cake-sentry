@@ -3,6 +3,9 @@
     "type": "cakephp-plugin",
     "description": "Sentry error handler plugin for CakePHP2",
     "keywords": ["Sentry", "CakePHP", "Log", "Error", "Exception"],
+    "extra": {
+        "installer-name": "Sentry"
+    },
     "require": {
         "php": ">=5.2.8",
         "raven/raven": "~0.10",
