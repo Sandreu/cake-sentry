@@ -3,6 +3,10 @@ Cake-Sentry
 
 **Cake-Sentry** is an error handler plugged on [Sentry](http://www.getsentry.com) - [docs](http://sentry.readthedocs.org/en/latest/quickstart/index.html#setting-up-an-environment)
 
+Compatibility
+=============
+This library is only compatible with CakePHP >= 2.8 and < 3.0. If you need support for CakePHP < 2.8 please use the 0.1.0 release of cake-sentry.
+
 Installation
 ------------
 **Note if you don't install from composer you will have to manually download the raven component and install it before proceeding to step 2.**
