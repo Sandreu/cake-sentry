@@ -8,7 +8,7 @@
  */
 class SentryErrorHandler extends ErrorHandler {
 
-    protected static function sentryLog(Exception $exception) {
+    protected static function sentryLog($exception) {
         if (Configure::read('debug')==0 || !Configure::read('Sentry.production_only')) {
             Raven_Autoloader::register();
             App::uses('CakeRavenClient', 'Sentry.Lib');
@@ -18,7 +18,7 @@ class SentryErrorHandler extends ErrorHandler {
         }
     }
 
-    public static function handleException(Exception $exception) {
+    public static function handleException($exception) {
         try {
             // Avoid bot scan errors
             if (Configure::read('Sentry.avoid_bot_scan_errors') && ($exception instanceof MissingControllerException || $exception instanceof MissingPluginException) && Configure::read('debug')==0) {
