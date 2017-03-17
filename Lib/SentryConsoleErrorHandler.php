@@ -23,11 +23,10 @@ class SentryConsoleErrorHandler extends ConsoleErrorHandler {
 		try {
 			// Avoid bot scan errors
 			if (Configure::read('Sentry.avoid_bot_scan_errors') && ($exception instanceof MissingControllerException || $exception instanceof MissingPluginException) && Configure::read('debug')==0) {
-                		echo Configure::read('Sentry.avoid_bot_scan_errors');
-                		exit(0);
-            		}
-
-			self::sentryLog($exception);
+				// do nothing
+			} else {
+				self::sentryLog($exception);
+			}
 
 			return parent::handleException($exception);
 		} catch (Exception $e) {
