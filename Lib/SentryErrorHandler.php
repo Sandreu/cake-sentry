@@ -14,7 +14,12 @@ class SentryErrorHandler extends ErrorHandler {
             App::uses('CakeRavenClient', 'Sentry.Lib');
 
             $client = new CakeRavenClient(Configure::read('Sentry.PHP.server'));
-            $client->captureException($exception, get_class($exception), 'PHP');
+            $client->captureException($exception, array(
+                'extra' => array(
+                    'php_version' => phpversion(),
+                    'class'=>get_class($exception)
+                ),
+            ));
         }
     }
 

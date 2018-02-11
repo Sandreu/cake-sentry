@@ -3,7 +3,7 @@
 App::uses('ClassRegistry', 'Utility');
 
 class CakeRavenClient extends Raven_Client {
-    public function capture($data, $stack, $vars = NULL) {
+    public function capture($data, $stack=null, $vars = null) {
     	if (class_exists('AuthComponent')) {
     		$model= Configure::read('Sentry.User.model');
     		if (empty($model)) $model = 'User';
@@ -24,7 +24,7 @@ class CakeRavenClient extends Raven_Client {
     		);
     	}
 
-        $eventId = parent::capture($data, $stack);
+        $eventId = parent::capture($data, $stack,$vars);
     	CakeSession::write('sentry_event_id',$eventId);
     	return $eventId;
 	}
