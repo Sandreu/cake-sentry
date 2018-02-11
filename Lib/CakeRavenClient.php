@@ -24,6 +24,8 @@ class CakeRavenClient extends Raven_Client {
     		);
     	}
 
-    	return parent::capture($data, $stack);
+        $eventId = parent::capture($data, $stack);
+    	CakeSession::write('sentry_event_id',$eventId);
+    	return $eventId;
 	}
 }
