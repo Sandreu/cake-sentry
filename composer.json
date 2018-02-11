@@ -9,8 +9,8 @@
     },
     "require": {
         "php": ">=5.2.8",
-        "raven/raven": "~0.10",
-        "composer/installers": "*"
+        "composer/installers": "*",
+        "sentry/sentry": "^1.8"
     },
     "license": "BSD 3-Clause",
     "authors": [
