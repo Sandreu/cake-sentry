@@ -12,7 +12,7 @@
         "composer/installers": "*",
         "sentry/sentry": "^1.8"
     },
-    "license": "BSD 3-Clause",
+    "license": "WTFPL",
     "authors": [
         {
             "name": "Sandreu",
