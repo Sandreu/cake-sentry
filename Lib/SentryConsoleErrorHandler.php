@@ -15,7 +15,7 @@ class SentryConsoleErrorHandler extends ConsoleErrorHandler {
 			App::uses('CakeRavenClient', 'Sentry.Lib');
 
 			$client = new CakeRavenClient(Configure::read('Sentry.PHP.server'));
-			$client->captureException($exception, get_class($exception), 'PHP');
+			$client->captureException($exception, ['extra' => ['php_version' => PHP_VERSION, 'class' => get_class($exception)]]);
 		}
 	}
 
