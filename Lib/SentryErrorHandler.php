@@ -39,14 +39,12 @@
                         "email" => AuthComponent::user($mail)
                     ));
                 }
-                $eventId = $client->captureException($exception, array(
+                $client->captureException($exception, array(
                     'extra' => array(
                         'php_version' => phpversion(),
                         'class' => get_class($exception)
                     ),
                 ));
-
-                CakeSession::write('sentry_event_id',$eventId);
             }
         }
 
