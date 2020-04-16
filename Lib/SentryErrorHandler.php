@@ -1,5 +1,6 @@
 <?php
 
+    App::import('Vendor', 'Autoloader', array('file' => 'raven' . DS . 'raven' . DS . 'lib' . DS . 'Raven' . DS . 'Autoloader.php'));
 
     /**
      * Description of SentryErrorHandler
